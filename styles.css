@@ -1,60 +1,73 @@
-/* Swiss-inspired layout (typography-first, asymmetric grid, high-contrast)
-   Applied via ui-designer-skill -> Swiss Design
-   Added smooth scrolling and scroll offset behavior for anchors
+/* Dark NEE theme — red & black, refined layout and alignment
+   Goal: clean, bold, non-slop design with strong typography and clear hierarchy
 */
 :root{
-  --header-offset: 92px;
-  --bg: #ffffff;
-  --paper: #fbfbfb;
-  --text: #0b0b0b;
-  --muted: #6b7280;
-  --accent: #D97706; /* matches SVG mark */
-  --accent-2: #F6C667;
-  --border: #e6e6e6;
+  --header-offset: 96px;
+  --bg: #060507; /* near-black */
+  --panel: #0f0f10;
+  --card: #151518;
+  --muted: #9ca3af;
+  --text: #eef2f5;
+  --accent: #ef4444; /* red-500 */
+  --accent-2: #b91c1c; /* red-700 */
+  --accent-3: #ffedd5; /* warm light */
+  --glass: rgba(255,255,255,0.03);
+  --border: rgba(255,255,255,0.04);
+  --radius:14px;
   --max-width:1100px;
-  --radius:8px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth; scroll-padding-top:var(--header-offset)}
-html,body{height:100%}
 body{
-  margin:0; font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  background:var(--paper); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-  line-height:1.5; padding:3.5rem 1rem; display:flex; justify-content:center;
+  margin:0; min-height:100vh; font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: radial-gradient(1200px 600px at 10% 15%, rgba(185,28,28,0.08), transparent 6%), linear-gradient(180deg,#060507 0%, #0b0607 100%);
+  color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  line-height:1.6; padding:3.5rem 1rem; display:flex; justify-content:center;
 }
 .container{max-width:var(--max-width); width:100%;}
-.header{display:flex; align-items:flex-start; justify-content:space-between; gap:1rem; margin-bottom:3rem}
-.brand{display:flex; gap:1rem; align-items:center}
-.logo{width:64px; height:64px; border-radius:6px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--accent-2),var(--accent));}
-.title{font-size:1.4rem; font-weight:700; letter-spacing:0.6px}
+.header{display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:2.4rem}
+.brand{display:flex; gap:0.75rem; align-items:center}
+.logo{width:64px; height:64px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow: 0 6px 18px rgba(185,28,28,0.12), inset 0 1px 0 rgba(255,255,255,0.02);}
+.title{font-size:1.15rem; font-weight:700; letter-spacing:0.6px}
 .small{color:var(--muted); font-size:0.95rem}
 .nav{display:flex; gap:1rem; align-items:center}
-.nav a{color:var(--text); text-decoration:none; font-weight:600}
-.cta{background:transparent; color:var(--accent); padding:0.45rem 0.7rem; border-radius:6px; font-weight:700; border:1px solid transparent}
+.nav a{color:var(--text); text-decoration:none; font-weight:600; padding:0.45rem 0.6rem; border-radius:10px}
+.nav a:hover{background:rgba(255,255,255,0.02)}
+.cta{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#0b0b0b; padding:0.5rem 0.9rem; border-radius:10px; font-weight:800; text-decoration:none; box-shadow: 0 8px 30px rgba(239,68,68,0.12)}
 
-/* Layout: asymmetrical two-column grid */
-.hero{display:grid; grid-template-columns:1fr 320px; gap:2rem; align-items:start; margin-bottom:2.5rem}
-.card{background:var(--paper); border-radius:var(--radius); padding:1.25rem; border:1px solid var(--border)}
-.lead{font-size:1.05rem; color:var(--muted); font-family:'Merriweather', serif}
-.stats{display:flex; gap:0.75rem; margin-top:1rem}
-.stat{background:transparent; padding:0.5rem 0.75rem; border-radius:6px; border:1px dashed var(--border)}
+/* HERO */
+.hero{display:grid; grid-template-columns: 1fr 420px; gap:2rem; align-items:start; margin-bottom:2rem}
+.hero-left{padding:1.25rem 0}
+.hero-title{font-family:'Space Grotesk', sans-serif; font-weight:800; font-size:clamp(2.4rem,6vw,4.4rem); line-height:0.9; margin:0 0 0.5rem 0; color:var(--text); letter-spacing:-1px}
+.hero-tagline{font-family:'Merriweather', serif; color:var(--muted); font-size:1.05rem; margin-bottom:1rem; max-width:62ch}
+.hero-actions{display:flex; gap:0.8rem; margin:1rem 0}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#0b0b0b; padding:0.7rem 1rem; border-radius:12px; font-weight:700; text-decoration:none; box-shadow:0 12px 30px rgba(185,28,28,0.12);}
+.btn-ghost{background:transparent; border:1px solid var(--border); color:var(--text); padding:0.6rem 0.85rem; border-radius:10px; text-decoration:none}
+.hero-highlights{display:flex; gap:0.75rem; margin-top:1rem}
+.highlight{background:linear-gradient(180deg, rgba(239,68,68,0.06), rgba(185,28,28,0.03)); padding:0.55rem 0.85rem; border-radius:10px; color:var(--accent-3); font-weight:700; border:1px solid rgba(239,68,68,0.06)}
 
-/* Grid for content sections - generous whitespace, typographic rhythm */
+.hero-right{display:flex; flex-direction:column; gap:1rem}
+.sample-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:12px; padding:1rem; border:1px solid var(--border); box-shadow: 0 8px 30px rgba(0,0,0,0.45)}
+.sample-header{font-weight:700; color:var(--accent-3); margin-bottom:0.5rem}
+.sample-text{color:var(--text); font-weight:700; font-size:1rem; margin-bottom:0.6rem}
+
+/* Content sections */
 .section{margin-bottom:2rem}
-.h2{font-size:1.05rem; margin:0 0 0.5rem 0; letter-spacing:0.4px}
+.h2{font-size:1.05rem; margin:0 0 0.6rem 0; letter-spacing:0.3px}
 .article{background:transparent; padding:0}
 .kv{display:flex; gap:0.6rem; flex-wrap:wrap}
-.badge{background:transparent; color:var(--accent); padding:0.2rem 0.45rem; border-radius:6px; font-size:0.85rem; font-weight:700; border:1px solid var(--border)}
-.quote{border-left:4px solid var(--accent); padding-left:0.9rem; color:var(--muted); font-style:italic}
+.badge{background:transparent; color:var(--accent); padding:0.25rem 0.55rem; border-radius:999px; font-size:0.85rem; font-weight:700; border:1px solid rgba(239,68,68,0.06)}
+.quote{border-left:4px solid rgba(239,68,68,0.12); padding-left:0.9rem; color:var(--muted); font-style:italic}
 
-/* Ensure anchor targets are offset to account for header */
-section{scroll-margin-top:calc(var(--header-offset) + 8px)}
-
-/* Examples list - clear typographic blocks */
+/* Examples list */
 .examples{display:flex; flex-direction:column; gap:0.6rem}
-.example{background:white; padding:0.9rem; border-radius:6px; display:flex; justify-content:space-between; gap:0.5rem; border:1px solid var(--border)}
-.btn{background:transparent; border:1px solid var(--border); color:var(--accent); padding:0.4rem 0.6rem; border-radius:6px; cursor:pointer; font-weight:700}
+.example{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:0.85rem; border-radius:10px; display:flex; justify-content:space-between; gap:0.6rem; border:1px solid var(--border);}
+.btn{background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--accent-3); padding:0.45rem 0.6rem; border-radius:8px; cursor:pointer; font-weight:700}
 .copy{font-size:0.95rem}
+
+/* Essays styling */
+.article h1{font-family:'Merriweather', serif; font-weight:700; color:var(--accent-3); margin-bottom:0.6rem}
+.article p{color:var(--muted)}
 
 footer{margin-top:3rem; color:var(--muted); font-size:0.95rem; text-align:left}
 
@@ -62,14 +75,15 @@ footer{margin-top:3rem; color:var(--muted); font-size:0.95rem; text-align:left}
 @media (max-width:980px){
   .hero{grid-template-columns:1fr}
   .nav{display:none}
+  .hero-right{order:2}
 }
 
-/* Reveal animation (subtle) */
-.reveal{opacity:0; transform:translateY(10px); transition:opacity 520ms cubic-bezier(.22,.9,.36,1), transform 520ms cubic-bezier(.22,.9,.36,1); will-change:transform,opacity}
+/* Reveal & motion */
+.reveal{opacity:0; transform:translateY(12px) scale(0.995); transition:opacity 520ms cubic-bezier(.22,.9,.36,1), transform 520ms cubic-bezier(.22,.9,.36,1); will-change:transform,opacity}
 .reveal.visible{opacity:1; transform:none}
 
-/* Accessibility focus */
-:focus{outline:2px dashed rgba(217,119,6,0.2); outline-offset:3px}
+/* Accessibility */
+:focus{outline:3px solid rgba(239,68,68,0.12); outline-offset:3px}
 
 /* Small print */
 .small{font-size:0.95rem}

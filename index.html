@@ -4,33 +4,36 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Nee — hoe het woord 'nee' gebruiken</title>
-  <!-- Unique font pairing (avoid Inter/Roboto/Arial) -->
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Space+Grotesk:wght@300;600&display=swap" rel="stylesheet">
+  <!-- Fonts: unique pairing (avoid Inter/Roboto) -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
+
     <header class="header">
       <div class="brand">
         <div class="logo" aria-hidden="true">
-          <!-- simple distinctive SVG mark -->
+          <!-- red-themed SVG mark -->
           <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
             <rect x="0" y="0" width="56" height="56" rx="10" fill="url(#g)" />
-            <path d="M16 38 L28 18 L40 38" stroke="#08262A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M16 38 L28 18 L40 38" stroke="#0b0b0b" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
             <defs>
               <linearGradient id="g" x1="0" x2="56" y1="0" y2="56">
-                <stop offset="0" stop-color="#F6C667"/>
-                <stop offset="1" stop-color="#D97706"/>
+                <stop offset="0" stop-color="#FFD6D6"/>
+                <stop offset="0.5" stop-color="#EF4444"/>
+                <stop offset="1" stop-color="#B91C1C"/>
               </linearGradient>
             </defs>
           </svg>
         </div>
-        <div>
-          <div class="title">Nee</div>
-          <div class="small">Gids over grenzen, communicatie en zelfzorg</div>
+        <div class="brand-text">
+          <div class="title">NEE</div>
+          <div class="small">De kunst van grenzen</div>
         </div>
       </div>
-      <nav class="nav">
+
+      <nav class="nav" role="navigation" aria-label="Hoofd navigatie">
         <a href="#over">Over</a>
         <a href="#voorbeelden">Voorbeelden</a>
         <a href="#oefeningen">Oefeningen</a>
@@ -41,49 +44,30 @@
     </header>
 
     <section class="hero">
-      <div class="card reveal">
-        <h2 class="h2">Waarom "nee" belangrijk is</h2>
-        <p class="lead">"Nee" zegt meer dan weigering — het definieert grenzen die je beschermen en je ruimte geven om te kiezen wat belangrijk is.</p>
-
-        <div class="stats">
-          <div class="stat">
-            <div class="small">Praktische tips</div>
-            <strong>70+</strong>
-          </div>
-          <div class="stat">
-            <div class="small">Voorbeelden</div>
-            <strong>80+</strong>
-          </div>
+      <div class="hero-left">
+        <h1 class="hero-title">NEE</h1>
+        <p class="hero-tagline">Leer wanneer en hoe je 'nee' zegt — praktische scripts, reflecties en oefeningen die je tijd, energie en grenzen beschermen.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#voorbeelden">Bekijk voorbeelden</a>
+          <a class="btn-ghost" href="#oefeningen">Oefeningen</a>
         </div>
-
-        <div class="section">
-          <h3 class="h2">Belangrijke inzichten</h3>
-          <ul>
-            <li>Grenzen zijn duidelijker wanneer je kort en zonder schuld reageert.</li>
-            <li>Een beleefd 'nee' is vaak beter dan een halfslachtig 'ja'.</li>
-            <li>Je hoeft niet elk verzoek uit te leggen — een korte reden is genoeg als je dat wilt.</li>
-            <li>Oefenen maakt 'nee' makkelijker; begin klein en bouw op.</li>
-          </ul>
+        <div class="hero-highlights">
+          <div class="highlight"><strong>10 essays</strong> diepgaande gidsen</div>
+          <div class="highlight"><strong>200+</strong> voorbeeldzinnen</div>
         </div>
       </div>
 
-      <aside class="toc reveal">
-        <div class="panel">
-          <div class="small">Inhoud</div>
-          <nav>
-            <ol>
-              <li><a href="#over">Over 'nee'</a></li>
-              <li><a href="#waarom">Wanneer</a></li>
-              <li><a href="#voorbeelden">Voorbeelden</a></li>
-              <li><a href="#zinnen-per-context">Zinnen per context</a></li>
-              <li><a href="#oefeningen">Oefeningen</a></li>
-              <li><a href="#faq">FAQ</a></li>
-              <li><a href="#resources">Resources</a></li>
-            </ol>
-          </nav>
+      <aside class="hero-right">
+        <div class="sample-card reveal">
+          <div class="sample-header">Snel voorbeeld</div>
+          <div class="sample-text">"Nee, bedankt — dat past voor mij niet."</div>
+          <button class="btn copy" data-text="Nee, bedankt — dat past voor mij niet.">Kopieer</button>
         </div>
+        <div class="panel small">Tip: Gebruik de zoekbalk om voorbeelden te filteren</div>
       </aside>
     </section>
+
+    <!-- Main content (kept sections and essays) -->
 
     <section id="over" class="section article reveal">
       <h2 class="h2">Over 'nee'</h2>
@@ -129,7 +113,6 @@
       </div>
 
       <div class="examples" id="examples-list">
-        <!-- examples are preserved from previous content -->
         <div class="example" data-text="Nee, bedankt — dat past voor mij niet."><div>Nee, bedankt — dat past voor mij niet.</div><button class="btn copy" data-text="Nee, bedankt — dat past voor mij niet.">Kopieer</button></div>
         <div class="example" data-text="Ik kan dat deze week niet doen; volgende week wellicht."><div>Ik kan dat deze week niet doen; volgende week wellicht.</div><button class="btn copy" data-text="Ik kan dat deze week niet doen; volgende week wellicht.">Kopieer</button></div>
         <div class="example" data-text="Dankjewel voor het vragen, maar ik moet nee zeggen."><div>Dankjewel voor het vragen, maar ik moet nee zeggen.</div><button class="btn copy" data-text="Dankjewel voor het vragen, maar ik moet nee zeggen.">Kopieer</button></div>
@@ -196,11 +179,9 @@
         <li>Artikel: Assertiveness techniques (online zoekterm)</li>
         <li>Oefening: lokale trainingen en workshops over communicatie</li>
       </ul>
-      <p class="small">Lees onze uitgebreide essays: <a href="essays/index.html">Essays over 'nee' — diepgaande gidsen</a></p>
     </section>
 
-    <!-- Essays sections: 10 in-depth guides -->
-
+    <!-- Essays sections appended on home page -->
     <section id="essay-1" class="section article reveal">
       <h2 class="h2">1. De kunst van grenzen stellen</h2>
       <p>Grenzen stellen is geen onvriendelijkheid; het is helderheid. Een duidelijke grens beschermt jouw tijd, energie en mentale ruimte, en maakt je interacties eerlijker. Begin met het onderscheid tussen zachte grenzen (tijd, beschikbaarheid) en harde grenzen (veiligheid, waarden). Beide soorten verdienen respect.</p>
@@ -277,10 +258,12 @@
         </ul>
       </p>
       <p>Tot slot: wees mild voor jezelf. Grenzen oefenen schrikt soms mensen af, ook jezelf. Maar met oefening wordt 'nee' een rustige stem van zelfrespect, niet een harde muur.</p>
+    </section>
 
     <footer>
-      <div class="small">Deze site is gemaakt door de bijdragers van het project — voor suggesties of verbeteringen zie de GitHub-repository.</div>
+      <div class="small">Deze site is gemaakt door bijdragers — wil je meer polish (illustraties, icons, of animerende micro-interacties) dan kan ik dat toevoegen.</div>
     </footer>
+
   </div>
   <script src="script.js"></script>
 </body>
