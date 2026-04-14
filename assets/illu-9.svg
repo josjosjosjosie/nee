@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title9">
+  <title id="title9">Illustratie: Communicatietechnieken (megaphone)</title>
+  <defs>
+    <linearGradient id="g9" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#FFF0F0"/>
+      <stop offset="1" stop-color="#EF4444"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="20" fill="url(#g9)"/>
+  <g fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M52 86 L120 64 L160 84 L120 104 Z" />
+    <path d="M60 114 L80 126" stroke-width="5"/>
+    <path d="M140 56 q12 8 12 20" stroke-width="4"/>
+  </g>
+</svg>

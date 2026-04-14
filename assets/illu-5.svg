@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title5">
+  <title id="title5">Illustratie: Culturele nuance (globe)</title>
+  <defs>
+    <linearGradient id="g5" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#FFF3F3"/>
+      <stop offset="1" stop-color="#EF4444"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="20" fill="url(#g5)"/>
+  <g fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="100" cy="100" r="42"/>
+    <path d="M58 100 H142" />
+    <path d="M100 58 C112 82 88 118 100 142" />
+    <path d="M76 76 C96 82 104 118 124 124" opacity="0.9"/>
+  </g>
+</svg>
