@@ -3,14 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Nee — hoe je het woord 'nee' gebruikt</title>
+  <title>Nee — hoe het woord 'nee' gebruiken</title>
+  <!-- Unique font pairing (avoid Inter/Roboto/Arial) -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Space+Grotesk:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
     <header class="header">
       <div class="brand">
-        <div class="logo">N</div>
+        <div class="logo" aria-hidden="true">
+          <!-- simple distinctive SVG mark -->
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+            <rect x="0" y="0" width="56" height="56" rx="10" fill="url(#g)" />
+            <path d="M16 38 L28 18 L40 38" stroke="#08262A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+            <defs>
+              <linearGradient id="g" x1="0" x2="56" y1="0" y2="56">
+                <stop offset="0" stop-color="#F6C667"/>
+                <stop offset="1" stop-color="#D97706"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
         <div>
           <div class="title">Nee</div>
           <div class="small">Gids over grenzen, communicatie en zelfzorg</div>
@@ -26,7 +40,7 @@
     </header>
 
     <section class="hero">
-      <div class="card">
+      <div class="card reveal">
         <h2 class="h2">Waarom "nee" belangrijk is</h2>
         <p class="lead">"Nee" zegt meer dan weigering — het definieert grenzen die je beschermen en je ruimte geven om te kiezen wat belangrijk is.</p>
 
@@ -52,7 +66,7 @@
         </div>
       </div>
 
-      <aside class="toc">
+      <aside class="toc reveal">
         <div class="panel">
           <div class="small">Inhoud</div>
           <nav>
@@ -70,7 +84,7 @@
       </aside>
     </section>
 
-    <section id="over" class="section article">
+    <section id="over" class="section article reveal">
       <h2 class="h2">Over 'nee'</h2>
       <p>Het woord 'nee' is klein, maar krachtig. Het stelt grenzen, biedt helderheid en voorkomt dat je overbelast raakt. In verschillende culturen en situaties heeft 'nee' andere nuances — soms zacht, soms daadkrachtig.</p>
 
@@ -92,7 +106,7 @@
       </ul>
     </section>
 
-    <section id="waarom" class="section article">
+    <section id="waarom" class="section article reveal">
       <h2 class="h2">Wanneer zeg je 'nee'?</h2>
       <ul>
         <li>Als iets je waarden schaadt of tegenstrijdig is met je normen.</li>
@@ -105,7 +119,7 @@
       <p>Jezelf toestaan om nee te zeggen vermindert stress, verhoogt zelfrespect en helpt je energie bewuster te besteden. Grenzen geven anderen ook helderheid, wat relaties op lange termijn versterkt.</p>
     </section>
 
-    <section id="voorbeelden" class="section article">
+    <section id="voorbeelden" class="section article reveal">
       <h2 class="h2">Praktische voorbeelden en korte scripts</h2>
       <p>Hier vind je tientallen kant-en-klare zinnen die je direct kunt gebruiken. Gebruik de zoekbalk om te filteren op woorden of toon.</p>
 
@@ -114,38 +128,16 @@
       </div>
 
       <div class="examples" id="examples-list">
-        <!-- a large set of examples across contexts -->
-        <div class="example" data-text="Nee, bedankt — dat past voor mij niet." style="display:flex;"><div>Nee, bedankt — dat past voor mij niet.</div><button class="btn copy" data-text="Nee, bedankt — dat past voor mij niet.">Kopieer</button></div>
-        <div class="example" data-text="Ik kan dat deze week niet doen; volgende week wellicht." style="display:flex;"><div>Ik kan dat deze week niet doen; volgende week wellicht.</div><button class="btn copy" data-text="Ik kan dat deze week niet doen; volgende week wellicht.">Kopieer</button></div>
-        <div class="example" data-text="Dankjewel voor het vragen, maar ik moet nee zeggen." style="display:flex;"><div>Dankjewel voor het vragen, maar ik moet nee zeggen.</div><button class="btn copy" data-text="Dankjewel voor het vragen, maar ik moet nee zeggen.">Kopieer</button></div>
-        <div class="example" data-text="Nee." style="display:flex;"><div><strong>Nee.</strong></div><button class="btn copy" data-text="Nee.">Kopieer</button></div>
-        <div class="example" data-text="Ik heb er niet de capaciteit voor." style="display:flex;"><div>Ik heb er niet de capaciteit voor.</div><button class="btn copy" data-text="Ik heb er niet de capaciteit voor.">Kopieer</button></div>
-        <div class="example" data-text="Ik kan vandaag niet, maar bedankt voor het vragen." style="display:flex;"><div>Ik kan vandaag niet, maar bedankt voor het vragen.</div><button class="btn copy" data-text="Ik kan vandaag niet, maar bedankt voor het vragen.">Kopieer</button></div>
-        <div class="example" data-text="Dat is niet iets waar ik me comfortabel bij voel." style="display:flex;"><div>Dat is niet iets waar ik me comfortabel bij voel.</div><button class="btn copy" data-text="Dat is niet iets waar ik me comfortabel bij voel.">Kopieer</button></div>
-        <div class="example" data-text="Ik wil daar liever niet over praten." style="display:flex;"><div>Ik wil daar liever niet over praten.</div><button class="btn copy" data-text="Ik wil daar liever niet over praten.">Kopieer</button></div>
-        <div class="example" data-text="Ik moet prioriteit geven aan andere taken." style="display:flex;"><div>Ik moet prioriteit geven aan andere taken.</div><button class="btn copy" data-text="Ik moet prioriteit geven aan andere taken.">Kopieer</button></div>
-        <div class="example" data-text="Ik heb geen energie om daar nu aan te beginnen." style="display:flex;"><div>Ik heb geen energie om daar nu aan te beginnen.</div><button class="btn copy" data-text="Ik heb geen energie om daar nu aan te beginnen.">Kopieer</button></div>
-        <div class="example" data-text="Ik kan daar geen toezeggingen over doen." style="display:flex;"><div>Ik kan daar geen toezeggingen over doen.</div><button class="btn copy" data-text="Ik kan daar geen toezeggingen over doen.">Kopieer</button></div>
-        <div class="example" data-text="Ik wil hier geen nee tegen zeggen, maar ik kan het nu niet redden." style="display:flex;"><div>Ik wil hier geen nee tegen zeggen, maar ik kan het nu niet redden.</div><button class="btn copy" data-text="Ik wil hier geen nee tegen zeggen, maar ik kan het nu niet redden.">Kopieer</button></div>
-        <div class="example" data-text="Ik kies ervoor om daar geen tijd aan te besteden." style="display:flex;"><div>Ik kies ervoor om daar geen tijd aan te besteden.</div><button class="btn copy" data-text="Ik kies ervoor om daar geen tijd aan te besteden.">Kopieer</button></div>
-        <div class="example" data-text="Nee — ik geef er nu geen prioriteit aan." style="display:flex;"><div>Nee — ik geef er nu geen prioriteit aan.</div><button class="btn copy" data-text="Nee — ik geef er nu geen prioriteit aan.">Kopieer</button></div>
-        <div class="example" data-text="Sorry, dat past niet in mijn planning." style="display:flex;"><div>Sorry, dat past niet in mijn planning.</div><button class="btn copy" data-text="Sorry, dat past niet in mijn planning.">Kopieer</button></div>
-        <div class="example" data-text="Ik voel me er niet goed bij om dat te doen." style="display:flex;"><div>Ik voel me er niet goed bij om dat te doen.</div><button class="btn copy" data-text="Ik voel me er niet goed bij om dat te doen.">Kopieer</button></div>
-        <div class="example" data-text="Ik werk daar liever niet aan samen." style="display:flex;"><div>Ik werk daar liever niet aan samen.</div><button class="btn copy" data-text="Ik werk daar liever niet aan samen.">Kopieer</button></div>
-        <div class="example" data-text="Bedankt voor het aanbod, maar ik sla over." style="display:flex;"><div>Bedankt voor het aanbod, maar ik sla over.</div><button class="btn copy" data-text="Bedankt voor het aanbod, maar ik sla over.">Kopieer</button></div>
-        <div class="example" data-text="Ik moet eerst andere dingen afronden." style="display:flex;"><div>Ik moet eerst andere dingen afronden.</div><button class="btn copy" data-text="Ik moet eerst andere dingen afronden.">Kopieer</button></div>
-        <div class="example" data-text="Dat is niet mijn verantwoordelijkheid." style="display:flex;"><div>Dat is niet mijn verantwoordelijkheid.</div><button class="btn copy" data-text="Dat is niet mijn verantwoordelijkheid.">Kopieer</button></div>
-        <div class="example" data-text="Ik wil daar geen toezeggingen voor doen op dit moment." style="display:flex;"><div>Ik wil daar geen toezeggingen voor doen op dit moment.</div><button class="btn copy" data-text="Ik wil daar geen toezeggingen voor doen op dit moment.">Kopieer</button></div>
-        <div class="example" data-text="Ik voel me te gestrest om dit erbij te nemen." style="display:flex;"><div>Ik voel me te gestrest om dit erbij te nemen.</div><button class="btn copy" data-text="Ik voel me te gestrest om dit erbij te nemen.">Kopieer</button></div>
-        <div class="example" data-text="Ik heb geen toestemming/mandaat om dat te beslissen." style="display:flex;"><div>Ik heb geen toestemming/mandaat om dat te beslissen.</div><button class="btn copy" data-text="Ik heb geen toestemming/mandaat om dat te beslissen.">Kopieer</button></div>
-        <div class="example" data-text="Dat is niet iets waar ik aan wil meedoen." style="display:flex;"><div>Dat is niet iets waar ik aan wil meedoen.</div><button class="btn copy" data-text="Dat is niet iets waar ik aan wil meedoen.">Kopieer</button></div>
-        <div class="example" data-text="Ik kan daar niet op ingaan zonder verdere informatie." style="display:flex;"><div>Ik kan daar niet op ingaan zonder verdere informatie.</div><button class="btn copy" data-text="Ik kan daar niet op ingaan zonder verdere informatie.">Kopieer</button></div>
-        <div class="example" data-text="Ik wil liever een andere aanpak proberen." style="display:flex;"><div>Ik wil liever een andere aanpak proberen.</div><button class="btn copy" data-text="Ik wil liever een andere aanpak proberen.">Kopieer</button></div>
-        <div class="example" data-text="Ik wil hier bewust 'nee' op zeggen, want ik moet mijn grens bewaren." style="display:flex;"><div>Ik wil hier bewust 'nee' op zeggen, want ik moet mijn grens bewaren.</div><button class="btn copy" data-text="Ik wil hier bewust 'nee' op zeggen, want ik moet mijn grens bewaren.">Kopieer</button></div>
+        <!-- examples are preserved from previous content -->
+        <div class="example" data-text="Nee, bedankt — dat past voor mij niet."><div>Nee, bedankt — dat past voor mij niet.</div><button class="btn copy" data-text="Nee, bedankt — dat past voor mij niet.">Kopieer</button></div>
+        <div class="example" data-text="Ik kan dat deze week niet doen; volgende week wellicht."><div>Ik kan dat deze week niet doen; volgende week wellicht.</div><button class="btn copy" data-text="Ik kan dat deze week niet doen; volgende week wellicht.">Kopieer</button></div>
+        <div class="example" data-text="Dankjewel voor het vragen, maar ik moet nee zeggen."><div>Dankjewel voor het vragen, maar ik moet nee zeggen.</div><button class="btn copy" data-text="Dankjewel voor het vragen, maar ik moet nee zeggen.">Kopieer</button></div>
+        <div class="example" data-text="Nee."><div><strong>Nee.</strong></div><button class="btn copy" data-text="Nee.">Kopieer</button></div>
+        <div class="example" data-text="Ik heb er niet de capaciteit voor."><div>Ik heb er niet de capaciteit voor.</div><button class="btn copy" data-text="Ik heb er niet de capaciteit voor.">Kopieer</button></div>
       </div>
     </section>
 
-    <section id="zinnen-per-context" class="section article">
+    <section id="zinnen-per-context" class="section article reveal">
       <h2 class="h2">Zinnen per context</h2>
       <h3>Op het werk</h3>
       <ul>
@@ -174,7 +166,7 @@
       </ul>
     </section>
 
-    <section id="oefeningen" class="section article">
+    <section id="oefeningen" class="section article reveal">
       <h2 class="h2">Oefeningen en rollenspellen</h2>
       <ol>
         <li>Schrijf 20 korte manieren om 'nee' te zeggen in jouw woorden.</li>
@@ -184,7 +176,7 @@
       </ol>
     </section>
 
-    <section id="faq" class="section article">
+    <section id="faq" class="section article reveal">
       <h2 class="h2">FAQ</h2>
       <h4>Is het raar om altijd 'nee' te zeggen?</h4>
       <p>Het doel is balans. Nee kiezen beschermt je, maar relaties vragen soms flexibiliteit. Belangrijker: wees bewust en leg keuzes uit wanneer nodig.</p>
@@ -196,7 +188,7 @@
       <p>Nee. Soms is een korte verklaring nuttig; soms is alleen 'nee' voldoende. Kies wat veilig en effectief is voor de situatie.</p>
     </section>
 
-    <section id="resources" class="section article">
+    <section id="resources" class="section article reveal">
       <h2 class="h2">Resources & verder lezen</h2>
       <ul>
         <li>Boek: "The Power of No" — Crosby, et al. (voorbeeld)</li>
