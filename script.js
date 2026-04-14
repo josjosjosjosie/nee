@@ -2,8 +2,14 @@
 // - copy buttons
 // - search filtering for examples
 // - reveal animations (staggered + IntersectionObserver)
+// - smooth anchor scrolling with header offset and reduced-motion support
 
 document.addEventListener('DOMContentLoaded', ()=>{
+  // utilities
+  const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const headerEl = document.querySelector('.header');
+  const headerOffset = headerEl ? headerEl.offsetHeight + 16 : 88;
+
   // copy example text
   document.querySelectorAll('.btn.copy').forEach(btn=>{
     btn.addEventListener('click', async ()=>{
@@ -15,8 +21,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
           btn.textContent='Gekopieerd ✓';
           setTimeout(()=>btn.textContent=prev,1200);
         } else {
-          // fallback: select nearby text and prompt
-          const el = document.createElement('textarea'); el.value = txt; document.body.appendChild(el); el.select();
+          // fallback: copy via textarea
+          const el = document.createElement('textarea'); el.value = txt; el.style.position='fixed'; el.style.left='-9999px'; document.body.appendChild(el); el.select();
           try{ document.execCommand('copy'); btn.textContent='Gekopieerd ✓'; setTimeout(()=>btn.textContent='Kopieer',1200);}catch(e){ btn.textContent='Kopieer (CTRL+C)'}
           document.body.removeChild(el);
         }
@@ -37,6 +43,40 @@ document.addEventListener('DOMContentLoaded', ()=>{
         ex.style.display = text.includes(q)?'flex':'none';
       })
     })
+  }
+
+  // Smooth scrolling for in-page anchors (nav links)
+  document.querySelectorAll('a[href^="#"]').forEach(link=>{
+    // ignore bare '#' links
+    if(link.getAttribute('href') === '#') return;
+    link.addEventListener('click', (e)=>{
+      const href = link.getAttribute('href');
+      if(!href || !href.startsWith('#')) return;
+      const target = document.querySelector(href);
+      if(target){
+        e.preventDefault();
+        const targetY = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: targetY, behavior: prefersReduced ? 'auto' : 'smooth' });
+        // focus target for accessibility
+        setTimeout(()=>{
+          if(!target.hasAttribute('tabindex')) target.setAttribute('tabindex','-1');
+          target.focus({preventScroll:true});
+        }, prefersReduced ? 50 : 500);
+        // update URL without adding history entry
+        try{ history.replaceState(null, '', href); }catch(e){}
+      }
+    })
+  })
+
+  // If page loads with a hash, adjust scroll to account for header offset
+  if(location.hash){
+    const target = document.querySelector(location.hash);
+    if(target){
+      setTimeout(()=>{
+        const targetY = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: targetY, behavior: 'auto' });
+      }, 50);
+    }
   }
 
   // Reveal animations: add .visible to .reveal elements on intersection or on load

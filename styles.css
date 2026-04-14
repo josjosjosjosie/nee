@@ -1,7 +1,9 @@
 /* Swiss-inspired layout (typography-first, asymmetric grid, high-contrast)
    Applied via ui-designer-skill -> Swiss Design
+   Added smooth scrolling and scroll offset behavior for anchors
 */
 :root{
+  --header-offset: 92px;
   --bg: #ffffff;
   --paper: #fbfbfb;
   --text: #0b0b0b;
@@ -13,6 +15,7 @@
   --radius:8px;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth; scroll-padding-top:var(--header-offset)}
 html,body{height:100%}
 body{
   margin:0; font-family: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -44,6 +47,9 @@ body{
 .badge{background:transparent; color:var(--accent); padding:0.2rem 0.45rem; border-radius:6px; font-size:0.85rem; font-weight:700; border:1px solid var(--border)}
 .quote{border-left:4px solid var(--accent); padding-left:0.9rem; color:var(--muted); font-style:italic}
 
+/* Ensure anchor targets are offset to account for header */
+section{scroll-margin-top:calc(var(--header-offset) + 8px)}
+
 /* Examples list - clear typographic blocks */
 .examples{display:flex; flex-direction:column; gap:0.6rem}
 .example{background:white; padding:0.9rem; border-radius:6px; display:flex; justify-content:space-between; gap:0.5rem; border:1px solid var(--border)}
@@ -59,7 +65,7 @@ footer{margin-top:3rem; color:var(--muted); font-size:0.95rem; text-align:left}
 }
 
 /* Reveal animation (subtle) */
-.reveal{opacity:0; transform:translateY(10px); transition:opacity 420ms ease-out, transform 420ms ease-out}
+.reveal{opacity:0; transform:translateY(10px); transition:opacity 520ms cubic-bezier(.22,.9,.36,1), transform 520ms cubic-bezier(.22,.9,.36,1); will-change:transform,opacity}
 .reveal.visible{opacity:1; transform:none}
 
 /* Accessibility focus */
